@@ -1,0 +1,18 @@
+[project]
+name = "vicena-science-benchmark"
+version = "0.1.0"
+description = "Vicena scientific prediction tasks, baselines and offline scoring; experimental data stays private"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Vicena" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+vicena-science-benchmark = "vicena_science_benchmark:main"
+
+[build-system]
+requires = ["uv_build>=0.11.7,<0.12.0"]
+build-backend = "uv_build"

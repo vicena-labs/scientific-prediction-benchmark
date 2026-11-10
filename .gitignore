@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+private/
+inputs/
+answers/
+reference.json
+readings.csv
+*.zip
+*.xlsx
+*.xls
+*.ipynb
+*.mp4
+*.pdf

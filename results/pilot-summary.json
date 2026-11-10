@@ -1,0 +1,278 @@
+{
+  "as_of": "2026-11-10",
+  "version": "0.1.0",
+  "scope": "Private-data retrospective paired-outcome pilot; source records and per-record values are excluded. Different setups are not pooled.",
+  "model_coverage": {
+    "Astra": "Completed in the three setups listed",
+    "Sol": "No run on this paired-outcome version",
+    "Luna": "No run on this paired-outcome version"
+  },
+  "units": {
+    "battery": "retention percentage points",
+    "catalyst": "mA"
+  },
+  "runs": [
+    {
+      "id": "isolated-python-2026-11-09",
+      "model": "Astra",
+      "requested_id": "openai/gpt-6-astra",
+      "effort": "high",
+      "time_limit_seconds": 600,
+      "tasks": {
+        "battery": {
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "pair_accuracy": 0.3333333333333333,
+          "mae": 3.2535982733513533,
+          "mean_regret": 0.5072323213694325,
+          "brier": 0.2497416666666667,
+          "blocks": {
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 1.0048227788869788
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 8.154087762352228
+            },
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.351476110302978
+            }
+          }
+        },
+        "catalyst": {
+          "correct_pairs": 4,
+          "scored_pairs": 7,
+          "pair_accuracy": 0.5714285714285714,
+          "mae": 13.558350972437179,
+          "mean_regret": 0.5484653820399207,
+          "brier": 0.16758571428571428,
+          "blocks": {
+            "NF-DC": {
+              "correct_pairs": 0,
+              "scored_pairs": 3,
+              "mae": 21.681814763796392
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 14.414265653151606
+            },
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.08928326432671749
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vicena-first-protocol-2026-11-09",
+      "model": "Astra",
+      "requested_id": "openai/gpt-6-astra",
+      "effort": "high",
+      "time_limit_seconds": 300,
+      "tasks": {
+        "battery": {
+          "correct_pairs": 6,
+          "scored_pairs": 12,
+          "pair_accuracy": 0.5,
+          "mae": 3.5712022041372706,
+          "mean_regret": 0.41493928270173086,
+          "brier": 0.24224933333333332,
+          "blocks": {
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 2.7188022712936757
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 3.2903679281115643
+            },
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 4.988569723954437
+            }
+          }
+        },
+        "catalyst": {
+          "status": "excluded",
+          "reason": "Incomplete submission after a notebook protocol conflict; no scientific score."
+        }
+      }
+    },
+    {
+      "id": "vicena-native-notebooks-2026-11-09",
+      "model": "Astra",
+      "requested_id": "openai/gpt-6-astra",
+      "effort": "high",
+      "time_limit_seconds": 300,
+      "tasks": {
+        "battery": {
+          "correct_pairs": 3,
+          "scored_pairs": 12,
+          "pair_accuracy": 0.25,
+          "mae": 3.5185982733513526,
+          "mean_regret": 0.9423164288011053,
+          "brier": 0.272959,
+          "blocks": {
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 1.2573227788869765
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 8.367421095685563
+            },
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.6848094436363112
+            }
+          }
+        },
+        "catalyst": {
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "pair_accuracy": 0.7142857142857143,
+          "mae": 11.716661269069304,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.17628628571428573,
+          "blocks": {
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 19.101314763796392
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 12.095665653151606
+            },
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.07117445085521473
+            }
+          }
+        }
+      }
+    }
+  ],
+  "baselines": {
+    "battery": {
+      "carry_forward": {
+        "correct_pairs": 5,
+        "scored_pairs": 12,
+        "pair_accuracy": 0.4166666666666667,
+        "mae": 5.562261695231615,
+        "mean_regret": 0.89682680806562,
+        "brier": 0.5833333333333334,
+        "blocks": {
+          "HT-unspecified": {
+            "correct_pairs": 1,
+            "scored_pairs": 6,
+            "mae": 2.940465501322432
+          },
+          "45C": {
+            "correct_pairs": 1,
+            "scored_pairs": 3,
+            "mae": 12.026104862827003
+          },
+          "25C": {
+            "correct_pairs": 3,
+            "scored_pairs": 3,
+            "mae": 2.594146786181805
+          }
+        }
+      },
+      "robust_trend": {
+        "correct_pairs": 5,
+        "scored_pairs": 12,
+        "pair_accuracy": 0.4166666666666667,
+        "mae": 3.313018033127814,
+        "mean_regret": 0.4507254501824936,
+        "brier": 0.5833333333333334,
+        "blocks": {
+          "HT-unspecified": {
+            "correct_pairs": 1,
+            "scored_pairs": 6,
+            "mae": 1.247750304597993
+          },
+          "45C": {
+            "correct_pairs": 2,
+            "scored_pairs": 3,
+            "mae": 8.101203086634342
+          },
+          "25C": {
+            "correct_pairs": 2,
+            "scored_pairs": 3,
+            "mae": 1.278523284327714
+          }
+        }
+      }
+    },
+    "catalyst": {
+      "carry_forward": {
+        "correct_pairs": 4,
+        "scored_pairs": 7,
+        "pair_accuracy": 0.5714285714285714,
+        "mae": 16.914112847437178,
+        "mean_regret": 0.4678467288719104,
+        "brier": 0.42857142857142855,
+        "blocks": {
+          "NF-DC": {
+            "correct_pairs": 1,
+            "scored_pairs": 3,
+            "mae": 26.80621143046306
+          },
+          "NF-IMP": {
+            "correct_pairs": 3,
+            "scored_pairs": 3,
+            "mae": 18.037868986484938
+          },
+          "GC": {
+            "correct_pairs": 0,
+            "scored_pairs": 1,
+            "mae": 0.3903307643267174
+          }
+        }
+      },
+      "linear_tail": {
+        "correct_pairs": 5,
+        "scored_pairs": 7,
+        "pair_accuracy": 0.7142857142857143,
+        "mae": 15.454113885037332,
+        "mean_regret": 0.4636537148305432,
+        "brier": 0.2857142857142857,
+        "blocks": {
+          "NF-DC": {
+            "correct_pairs": 1,
+            "scored_pairs": 3,
+            "mae": 24.589335938878676
+          },
+          "NF-IMP": {
+            "correct_pairs": 3,
+            "scored_pairs": 3,
+            "mae": 16.47841497119629
+          },
+          "GC": {
+            "correct_pairs": 1,
+            "scored_pairs": 1,
+            "mae": 0.21482917503687968
+          }
+        }
+      }
+    }
+  }
+}

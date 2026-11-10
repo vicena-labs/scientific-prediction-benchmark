@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the exact release and run profile; laboratory data is not distributed."
+title: "Vicena Scientific Prediction Benchmark"
+authors:
+  - name: "Vicena"
+type: software
+version: 0.1.0
+date-released: 2026-11-10
+repository-code: "https://github.com/vicena-labs/scientific-prediction-benchmark"
+license: MIT
