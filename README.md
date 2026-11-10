@@ -55,7 +55,8 @@ The model scope is **Astra, Sol and Luna**. Only Astra has completed this exact 
 
 ## Explore
 
-- [Data dictionary](docs/data-dictionary.md): fields, units, missing values and experimental context.
+- [All-samples data dictionary](docs/sample-data-dictionary.md): specimens, measurements, images, process records, formats and interpretation across the wider received collection.
+- [Benchmark data dictionary](docs/data-dictionary.md): the exact battery/catalyst fields, units, missing values and evaluation schema.
 - [Protocol](docs/protocol.md): cutoffs, hidden outcomes, metrics, baselines and comparison controls.
 - [Run and reproduce](docs/reproduce.md): validate, package and score your own private cases.
 - [Results and limitations](docs/results.md): complete paired-task pilot history and evidence boundaries.
