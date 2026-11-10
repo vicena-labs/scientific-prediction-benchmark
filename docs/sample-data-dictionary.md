@@ -19,9 +19,6 @@ The descriptions below follow the supplied files and their inspection records. F
 | [C07 · Immunotherapy results](#c07--immunotherapy-results) | Animal identifiers and treatment groups | Numerical observations and researcher results | Workbook and study figures |
 | [C08 · Enzyme kinetics](#c08--enzyme-kinetics) | Wild-type and mutant enzyme under substrate conditions | Kinetic parameters, uncertainty and detection status | Summary table and assay description |
 | [C09 · Additional cytometry](#c09--additional-cytometry) | Events within an instrument acquisition | Scatter, fluorescence pulse measurements and acquisition metadata | Native instrument files |
-| [C10 · Water assays](#c10--water-assays) | Water observations indexed by date and location | Rapid-assay readings, culture counts and environmental readings | Measurement and calculation workbooks |
-| [C11 · Aquaculture growth and isotopes](#c11--aquaculture-growth-and-isotopes) | Fish, crayfish, worms, diets and source materials | Growth, survival, feeding, isotope and elemental-composition tables | Recorded tables and researcher calculations |
-| [C12 · Aquatic biological responses](#c12--aquatic-biological-responses) | Image observations and condition-dependent biological responses | Morphometry, image intensity, concentration response and statistical analysis | Measurement tables and statistical files |
 
 [Other archived materials](#other-archived-materials) cover public reference datasets, model outputs, design files and documents. They are listed separately from these experimental samples.
 
@@ -189,58 +186,6 @@ Native formats, units and specimen-to-file mappings belong to the acquisition re
 | Instrument and timing metadata | Text and timestamps | Instrument identification and acquisition times |
 
 **Interpretation:** fluorescence channel names do not establish a biomarker identity, gate, phenotype or independent reference label. Events within one file share acquisition context.
-
-## C10 · Water assays
-
-**Specimens:** water observations indexed by sampling date and location. **Format:** XLSX measurement, culture-count and summary worksheets.
-
-| Data field or group | Representation / unit | What it records |
-| --- | --- | --- |
-| Sampling date and location | Date and categorical label | Fields used to relate observations between sheets |
-| Rapid-assay response | Number; unit not established | Recorded rapid-assay value; do not automatically label it RFU or a cell count |
-| Culture count | Number; colony-count field | Separate recorded culture observation |
-| Culture concentration | Number/formula; CFU/mL where labelled | Colony-forming units per millilitre after the source's conversion |
-| Repeat and summary fields | Labels, numbers and formulas | Replicate entries, means and links to dated source sheets |
-| Temperature and oxygen | Numbers indexed by date/time; units require source confirmation | Additional environmental readings |
-| Comparison summaries | Numbers and formulas | Researcher joins and analyses relating assay and culture tables |
-
-**Interpretation:** culture measurements are distinct from the rapid assay, but a date/location match still requires source verification. Some summary entries lack an explicit acquisition-sheet link. The broader archive contains study material beyond these measurement tables.
-
-## C11 · Aquaculture growth and isotopes
-
-**Specimens:** fish, crayfish and worm-related feeding comparisons, with diet/source and consumer material. **Formats:** XLSX and CSV.
-
-| Data field or group | Representation / unit | What it records |
-| --- | --- | --- |
-| Observation identity | Dates/day indices, treatment, tank/replicate and individual labels | The observation's experimental context |
-| Body length | Numbers; cm in explicitly labelled measurement tables | Standard, total and organism-specific lengths |
-| Wet mass | Numbers; g in labelled tables | Individual or grouped weight measurements |
-| Survival and status | Counts, categorical codes or % | Recorded status and survival summaries; code meanings must follow the source |
-| Feeding and biomass | Numbers/formulas; source-specific mass, density or ratio units | Feed quantities, cumulative feeding and biomass summaries |
-| Growth and feed conversion | Numbers/formulas; source-defined ratios or rates | Researcher-calculated changes and performance summaries |
-| `d15N`, `d13C` | Numbers; isotope delta labels | Nitrogen/carbon isotope values; reference standards and unit conventions need source confirmation |
-| `%N`, `%C` and related fields | Numbers; scaling varies between versions | Elemental-composition entries; some versions use fractions where others use percentage-like values |
-| Source/consumer category | Text | Diet/source material or consumer group associated with isotope rows |
-| Enrichment and statistical terms | Numbers; means and standard deviations | Calculated or literature-derived enrichment factors, separate from specimen measurements |
-
-**Interpretation:** recorded entries, calculations, literature inputs and repeated analysis exports coexist. Preserve their origins. Tank membership and repeated observations affect independence; copies of a table are not additional experiments.
-
-## C12 · Aquatic biological responses
-
-**Observations:** aquatic experimental conditions, image-derived observations and biological-response comparisons. **Formats:** XLSX, SPSS SAV data and SPV output, with study documents.
-
-| Data field or group | Representation / unit | What it records |
-| --- | --- | --- |
-| Image/condition label | Text | The image observation and experimental grouping |
-| `Area` | Number; image calibration not established here | Measured image-region area |
-| Mean light/darkness | Number; image-intensity scale | Brightness/darkness summaries |
-| `Feret`, `MinFeret`, `FeretX`, `FeretY`, `FeretAngle` | Numbers; source image-coordinate/measurement conventions | Size, position and orientation descriptors from image analysis |
-| Hyphal length and density/mass summaries | Numbers and derived summaries | Morphological response measurements; do not interpret a labelled image proxy as independently weighed mass |
-| Concentration and condition | Numbers or labels; units depend on the experiment | Exposure/condition indexing in response tables |
-| Response, reduction and total | Numbers/formulas | Values used in condition-response comparisons |
-| Statistical analysis | SAV datasets, SPV output and worksheet text | Probit/dose-response settings and reported statistical results |
-
-**Interpretation:** image-derived tables are processed measurements. Their presence does not establish a corresponding archive of original images or calibrated physical dimensions. Statistical fits are analysis outputs, not independent biological observations.
 
 ## Other archived materials
 
