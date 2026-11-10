@@ -55,7 +55,7 @@ The model scope is **Astra, Sol and Luna**. Only Astra has completed this exact 
 
 ## Explore
 
-- [All-samples data dictionary](docs/sample-data-dictionary.md): specimens, measurements, images, process records, formats and interpretation across the wider received collection.
+- [Scientific data dictionary](docs/sample-data-dictionary.md): data types, formats, scientific applications and ways to scope a dataset with Vicena.
 - [Benchmark data dictionary](docs/data-dictionary.md): the exact battery/catalyst fields, units, missing values and evaluation schema.
 - [Protocol](docs/protocol.md): cutoffs, hidden outcomes, metrics, baselines and comparison controls.
 - [Run and reproduce](docs/reproduce.md): validate, package and score your own private cases.

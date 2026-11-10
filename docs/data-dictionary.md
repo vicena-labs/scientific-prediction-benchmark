@@ -2,7 +2,7 @@
 
 > [Benchmark](../README.md) · [Workflow](reproduce.md) · [Protocol](protocol.md)
 
-Looking for the wider collection? The [all-samples data dictionary](sample-data-dictionary.md) covers experimental records, images, process recordings and specifications across materials, electrochemistry and biology. This page defines only the benchmark's battery/catalyst input and scoring schema.
+Looking for scientific datasets? The [scientific data dictionary](sample-data-dictionary.md) covers measurement types, images, process records and project applications across materials, electrochemistry and biology. This page defines the benchmark's battery/catalyst input and scoring schema.
 
 Version 0.1, 10 November 2026. This describes the private evaluation interface; no source records or populated experimental examples are published here. Original acquisitions stay unchanged. Exported CSVs contain selected recorded values with aliases and explicit unit handling. Selection, aliasing and endpoint calculation are evaluation transformations, not claims that the exports are original native instrument files.
 

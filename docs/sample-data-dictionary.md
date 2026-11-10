@@ -1,210 +1,174 @@
-# Vicena sample data dictionary
+# Vicena scientific data dictionary
 
-> [Benchmark home](../README.md) · [Benchmark input schema](data-dictionary.md) · [Discuss your data needs](https://vicena.ai/experimental-data)
+> [Vicena](https://vicena.ai/experimental-data) · [Benchmark](../README.md) · [Discuss your data needs](mailto:mehdi@vicena.ai)
 
-**Experimental measurements, images, process records and scientific results represented in Vicena's received sample collection.** This dictionary describes the specimens, data types, fields and formats across the collection reviewed on 10 November 2026. It extends beyond the battery and catalyst inputs used in the current benchmark.
+Vicena works with scientists to build datasets around real experiments. Explore the measurements, images, process records and expert analysis that can support your AI training and evaluation projects.
 
-The descriptions below follow the supplied files and their inspection records. Field names are readable descriptions; backticked labels identify source fields or channel families. These are not a new common file schema. No source measurements, recipe values, images, supplier identities or answer keys are published here. Sample quantities are outside this dictionary's scope.
+Start with the scientific task you want your model to perform. We work with partner laboratories to retrieve historical records, add expert annotation and commission targeted measurements or new experiments around that task.
 
-## Browse the collection
+## Explore the data
 
-| Collection | Specimen or observation | Data types | Record form |
-| --- | --- | --- | --- |
-| [C01 · Battery measurements](#c01--battery-measurements) | Electrolytes, pouch cells and electrode test systems | Formulation, properties, preparation measurements, formation, cycling, impedance, voltammetry and rate response | Numerical workbooks and researcher analysis |
-| [C02 · Catalyst characterization](#c02--catalyst-characterization) | Fe–N–C catalyst materials and electrode recordings | Diffraction, electron microscopy, elemental analysis and electrochemical scans | Numerical files, images and reports; broader specification alongside them |
-| [C03 · Oxygen electrodes](#c03--oxygen-electrodes) | Composite nanofiber electrodes and a control | Structure, surface chemistry, impedance, polarization and durability | Specification describing the data; acquisitions not included in that document |
-| [C04 · Thin films and 2D materials](#c04--thin-films-and-2d-materials) | Patterned structures, transferred graphene and multilayer films | Microscopy, surface topography, height profiles and defect descriptions | Figures and descriptions in a presentation |
-| [C05 · Coin-cell process recording](#c05--coin-cell-process-recording) | Laboratory actions, equipment and cell components | Video, process sequence, timestamps and annotations | Recording and supporting documents |
-| [C06 · Cell biology and immune assays](#c06--cell-biology-and-immune-assays) | Cell preparations, protein samples and assay conditions | Cytometry, protein images, gene expression, viability, cell damage and immunoassays | Instrument files, image exports, tables and analysis projects |
-| [C07 · Immunotherapy results](#c07--immunotherapy-results) | Animal identifiers and treatment groups | Numerical observations and researcher results | Workbook and study figures |
-| [C08 · Enzyme kinetics](#c08--enzyme-kinetics) | Wild-type and mutant enzyme under substrate conditions | Kinetic parameters, uncertainty and detection status | Summary table and assay description |
-| [C09 · Additional cytometry](#c09--additional-cytometry) | Events within an instrument acquisition | Scatter, fluorescence pulse measurements and acquisition metadata | Native instrument files |
-
-[Other archived materials](#other-archived-materials) cover public reference datasets, model outputs, design files and documents. They are listed separately from these experimental samples.
-
-## Reading the fields
-
-- **Recorded values** are numbers or signals stored in the supplied files. A workbook can contain recorded measurements, formulas and analysis on the same sheet; it is not automatically a native instrument export.
-- **Derived values** include normalized responses, fitted parameters, spreadsheet calculations and image-analysis measurements. Keep them linked to their source observations and method.
-- **Images and figures** carry pixel data or plotted evidence. An embedded plot does not establish that its underlying numerical array is included.
-- **Specifications** describe intended or reported collections. Their method lists do not establish the headers, units or contents of acquisition files.
-
-An unspecified unit remains unspecified. Empty cells, formula errors, absent observations and “not detectable” are distinct states. Events, pixels, cycles, repeated scans and repeated versions of a file are not independent specimens. Cross-file joins require the source's specimen and run mapping; similar labels alone do not establish a matched experiment.
+| Collection | Scientific scope | Data and formats |
+| --- | --- | --- |
+| [C01 · Battery measurements](#c01--battery-measurements) | Formulation, preparation and electrochemical performance | XLSX measurement and analysis tables |
+| [C02 · Catalyst characterization](#c02--catalyst-characterization) | Structure, morphology, composition and electrochemical response | TXT, JPEG, DOCX and XLSX |
+| [C03 · Oxygen electrodes](#c03--oxygen-electrodes) | Electrode characterization, performance and durability | Laboratory dataset specification |
+| [C04 · Thin films and 2D materials](#c04--thin-films-and-2d-materials) | Pattern quality, surface topography and film morphology | Microscopy figures and profiles in PPTX |
+| [C05 · Coin-cell process recording](#c05--coin-cell-process-recording) | Laboratory actions, equipment and assembly sequence | MP4 with supporting XLSX and PDF records |
+| [C06 · Cell biology and immune assays](#c06--cell-biology-and-immune-assays) | Cellular signals, protein expression and assay responses | FCS, TIFF, XLSX and Prism projects |
+| [C07 · Immunotherapy results](#c07--immunotherapy-results) | Study groups and animal-level results | XLSX result tables and study figures |
+| [C08 · Enzyme kinetics](#c08--enzyme-kinetics) | Variant and substrate comparisons | Reported kinetic parameters and assay context |
+| [C09 · Cytometry acquisition records](#c09--cytometry-acquisition-records) | Event-level scatter and fluorescence signals | Native FCS 3.1 files |
 
 ## C01 · Battery measurements
 
-**Specimens:** electrolyte/additive comparisons in NCM622/graphite and LFP/graphite systems, pouch-cell preparation records, and additional LFP, graphite, nickel-rich and silicon-containing electrode test series. **Format:** XLSX.
+**Scientific systems:** electrolyte and additive comparisons across NCM622/graphite, LFP/graphite, nickel-rich and silicon-containing electrode systems, including pouch-cell preparation and testing. **Format:** XLSX.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation / unit | Scientific content |
 | --- | --- | --- |
-| Formulation and material labels | Text and categorical labels | Nominal electrolyte, additive and electrode-system identities |
-| Ingredient entries and batch quantities | Numbers; source-specific fractions, percentages or mass entries | Recipe tables and batch-mass records; the recording basis varies between tables |
-| Electrolyte properties | Numbers; units are not consistently established | Conductivity, moisture and acidity entries associated with formulation labels |
-| Cell identity and preparation stage | Text and categorical labels | Named cells and checkpoints such as rest, formation, ageing and grading |
-| Preparation masses | Numbers; g where labelled | Mass before filling, after sealing and at degassing/resealing checkpoints; differences may be formulas |
-| Checkpoint voltage and impedance | Numbers; V and mΩ in the labelled process table | Recorded electrical measurements at preparation and grading checkpoints |
-| Formation and grading capacity | Numbers; mAh | Charge/discharge and grading-capacity measurements, with some unfilled template fields |
-| Cycling | Ordered numbers; cycle index and mAh | Discharge capacity along a cycling trace, with temperature and group context |
-| Test conditions | Numbers or text; °C, V and C-rate where documented | Temperature, voltage limits and charge/discharge settings; planned settings remain distinct from confirmed execution |
-| Rate and resistance tests | Numbers; C-rate, mAh, mΩ and state of charge where labelled | Capacity under different rates and direct-current resistance at stated checkpoints or pulse durations |
-| Cyclic voltammetry | Ordered numerical arrays; potential and current | Potential–current traces; use each sheet's axis labels for units and scaling |
-| Differential capacity | Ordered numerical arrays; voltage and dQ/dV | Recorded or processed differential-capacity curves; the capacity normalization must follow the source |
-| Impedance spectra | Numerical coordinates; source-specific impedance units and sign conventions | Real/imaginary impedance series at labelled states; plotted or shifted series also occur |
-| Performance summaries | Numbers and formulas; % or source-defined ratios | Retention, efficiency, normalized capacities and comparisons |
-| Researcher interpretation | Text | Conclusions, observations and proposed follow-up work |
+| Formulations | Material labels and nominal ingredient quantities | Electrolyte recipes, additive comparisons and batch quantities |
+| Electrolyte properties | Numerical property tables | Conductivity, moisture and acidity entries |
+| Cell preparation | Cell/stage labels; mass in g | Filling, sealing, formation, ageing and grading records |
+| Electrical checkpoints | V and mΩ where labelled | Voltage and impedance at preparation and test checkpoints |
+| Formation and grading | Capacity in mAh | Charge/discharge and grading-capacity measurements |
+| Cycling performance | Cycle index, mAh and calculated % | Capacity trajectories, retention and efficiency summaries |
+| Test conditions | °C, V and C-rate where documented | Temperature, voltage limits and planned or recorded charge/discharge settings |
+| Rate and resistance | C-rate, mAh, mΩ and state of charge | Capacity across test rates and direct-current resistance measurements |
+| Electrochemical curves | Potential-current, dQ/dV and impedance arrays | Voltammetry, differential capacity and impedance response |
+| Researcher analysis | Calculations and scientific notes | Performance comparisons, observations and proposed next experiments |
 
-**Interpretation:** recipe units are mixed, and some impedance series are transformed for plotting. Preserve those distinctions. Named cell rows support some preparation-to-grading joins; formulation-level cycling labels do not by themselves establish the same-cell link. Repeated sheets and empty fitting templates add no new measurements.
+**Project applications:** early-cycle performance prediction, formulation comparison and analysis of preparation and test conditions.
 
 ## C02 · Catalyst characterization
 
-**Specimens:** Fe–N–C catalyst samples with electrode/configuration labels. **Formats:** TXT diffraction arrays, JPEG microscopy images, DOCX elemental reports with embedded images, and XLSX electrochemical records.
+**Scientific systems:** Fe-N-C catalyst materials and electrode test configurations. **Formats:** TXT diffraction traces, JPEG microscopy, DOCX elemental reports and XLSX electrochemical records.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation / unit | Scientific content |
 | --- | --- | --- |
-| Material and electrode labels | Text | Supplied sample, electrode/configuration and test labels |
-| Diffraction position | Ordered numbers; unit not declared in the inspected TXT header | The recorded X-ray diffraction scan coordinate; confirm the axis convention before treating it as calibrated 2θ |
-| Diffraction intensity | Numbers; instrument scale unspecified | Signal at each scan position; phase assignments are a separate interpretation |
-| Scanning electron microscopy (SEM) | Raster pixels and image overlays | Morphology, scale bars and magnification; pixels are image evidence rather than a particle-property table |
-| Energy-dispersive X-ray spectroscopy (EDS) | Embedded spectra, maps and tables | Elemental signal and spatial distribution, where included in a report |
-| EDS quantification | Element/line labels and numbers; wt%, reported uncertainty and other report-specific fields | Element fractions, line types, k-ratios, apparent concentration and standard information; fields vary by report |
-| Electrode potential | Ordered numbers; V | Potential axis in the populated electrochemical exports |
-| Current | Signed numbers; A | Current recorded during linear sweeps and multi-cycle cyclic voltammetry |
-| Test context | Text and numbers; RPM where supplied | Oxygen-evolution/reduction labels, electrode groups and rotation labels |
-| Acquisition sequence | Row order | Order of exported observations; row index is not an elapsed-time measurement |
+| Material and test context | Sample, electrode and test labels | Catalyst identity and measurement configuration |
+| X-ray diffraction | Scan-coordinate and intensity arrays | Diffraction response for structural characterization |
+| Electron microscopy | SEM images with scale bars and magnification | Surface morphology and microstructural features |
+| Elemental spectra and maps | EDS report images | Elemental signals and spatial distribution |
+| Elemental quantification | Element/line labels, wt% and report-specific statistics | Composition estimates, reported uncertainty and standard information |
+| Electrochemical response | Potential in V; signed current in A | Linear sweeps and multi-cycle cyclic voltammetry |
+| Reaction and electrode context | Test labels; RPM where supplied | Oxygen-evolution/reduction measurements and electrode/rotation context |
+| Measurement sequence | Ordered scan observations | The progression of response through each recorded sweep |
 
-**Interpretation:** retain the recorded potential reference and current sign. Current is not current density without an electrode area. Folder/filename conflicts, duplicate scan content and an empty workbook need to remain distinguishable from valid specimen joins.
-
-**Companion specification:** a broader metal–nitrogen–carbon catalyst inventory describes iron-, cobalt-, manganese-containing, mixed-metal and phosphorus-modified materials, with diffraction, microscopy and electrochemical tests. Those described families are separate from the Fe–N–C measurement files reviewed here.
+**Project applications:** electrochemical curve prediction, microscopy interpretation and combined analysis of structure, composition and performance. A companion laboratory specification describes additional metal-N-C catalyst families.
 
 ## C03 · Oxygen electrodes
 
-**Specimens described:** GDC/PBSCF core–shell nanofiber composites and a PBSCF control, in symmetric-cell and single-cell configurations. **Record form:** DOCX specification. The entries below describe its measurement categories, not inspected acquisition columns.
+**Scientific systems:** GDC/PBSCF core-shell nanofiber composites and a PBSCF control in symmetric-cell and single-cell configurations. **Record:** laboratory dataset specification covering the following measurement types.
 
-| Data type described | Expected quantities / representation | Meaning in the specification |
+| Data type | Representation | Scientific content |
 | --- | --- | --- |
-| Material and cell context | Composition labels, configuration and preparation context | Composite/control identity and the system being tested |
-| Diffraction and electron microscopy | Diffraction traces; SEM and selected transmission electron microscopy (TEM) images | Structure and morphology |
-| Elemental analysis | EDS spectra/maps | Element distribution in selected material |
-| Surface chemistry | X-ray photoelectron spectroscopy (XPS) spectra | Before/after surface-chemical comparisons |
-| Impedance | Electrochemical impedance spectroscopy (EIS) | Response across stated temperatures and operating conditions |
-| Polarization | Linear-sweep voltammetry (LSV) | Response in fuel-cell and electrolysis modes |
-| Durability | Current versus time | Sustained response during a constant-potential test |
+| Material and cell context | Composition and configuration labels | Composite/control identities and cell architecture |
+| Diffraction and microscopy | XRD, SEM and selected TEM | Structure and electrode morphology |
+| Elemental analysis | EDS spectra/maps | Element distribution in selected materials |
+| Surface chemistry | Before/after XPS spectra | Surface-chemical changes associated with testing |
+| Impedance | Electrochemical impedance spectroscopy | Response across temperature and operating conditions |
+| Polarization | Linear-sweep voltammetry | Fuel-cell and electrolysis-mode response |
+| Durability | Current-versus-time records | Sustained response during constant-potential testing |
 
-Native formats, units and specimen-to-file mappings belong to the acquisition records. Repeated composition labels in the specification should not be silently resolved into distinct specimens.
+**Project applications:** scope datasets for electrode comparison, operating-condition analysis and durability prediction.
 
 ## C04 · Thin films and 2D materials
 
-**Specimens:** lithographed patterns, transferred graphene and multilayer films. **Format:** PPTX containing microscopy figures, an atomic force microscopy (AFM) view, a height profile and descriptions.
+**Scientific systems:** lithographed patterns, transferred graphene and multilayer films. **Format:** PPTX containing microscopy figures, AFM views, height profiles and researcher descriptions.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation | Scientific content |
 | --- | --- | --- |
-| Pattern appearance | Raster figure; scale annotation where shown | Edges, linewidth variation and visible pattern defects |
-| Surface topography | AFM figure with its displayed axes/scale | Surface features associated with a graphene-transfer example |
-| Height profile | Plotted distance–height relationship | The profile shown beside the AFM image; native profile values are not established by the plot |
-| Film morphology | Raster figure | Wrinkles, breaks or damage described in the example |
-| Researcher description | Text | Reported process context and interpretation of the figure |
+| Pattern microscopy | Image figures with displayed scale information | Pattern edges, linewidth variation and visible defects |
+| Surface topography | Atomic force microscopy figures | Surface features in graphene-transfer examples |
+| Height profiles | Plotted distance-height relationships | Surface-profile evidence alongside AFM views |
+| Film morphology | Image figures | Wrinkles, breaks and other visible film features |
+| Researcher descriptions | Scientific text | Fabrication context and expert descriptions of the observed features |
 
-**Interpretation:** these are illustrated outcomes, not complete process logs or native AFM arrays. A reported defect is not an independently established cause. The figures do not constitute a new unpublished measurement collection.
+**Project applications:** visual defect recognition, surface-profile interpretation and expert assessment of fabrication quality.
 
 ## C05 · Coin-cell process recording
 
-**Observations:** electrode preparation, coating, assembly, equipment handling and testing context. **Formats:** MP4, XLSX moment/annotation records and PDF supporting material.
+**Scientific workflow:** electrode preparation, coating, coin-cell assembly, equipment handling and test-loading context. **Formats:** MP4, XLSX moment records and PDF supporting material.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation | Scientific content |
 | --- | --- | --- |
-| Video frames | Time-ordered image sequence | Visible laboratory actions, tools, components and equipment |
-| Time reference | Video timestamp or annotation position | Where an observation appears in the recording |
-| Process stages | Text and sequence | Preparation, coating, assembly and test-loading context |
-| Moment annotations | Text associated with video positions | Descriptions of visible actions and objects |
-| Laboratory context | Supporting text | Explanations and clarifications accompanying the recording |
-| Demonstration annotations | Separately authored tags/overlays | Later presentation and feature-extraction layers, including AI-assisted tags |
+| Laboratory video | Time-ordered frames | Visible actions, materials, components and equipment |
+| Time references | Video timestamps | Locations of actions and observations within the recording |
+| Process stages | Sequence and stage descriptions | Preparation, coating, assembly and testing context |
+| Moment annotations | Timestamped text | Descriptions of actions, objects and tool use |
+| Laboratory context | Supporting documents | Scientist explanations and workflow clarifications |
+| Demonstration annotations | Separate presentation layer | AI-assisted tags and overlays in edited demonstrations |
 
-**Interpretation:** the original recording and later edited demonstrations are distinct. Generated tags are not measured laboratory signals or independently verified labels. The cycling result discussed in the recording concerns an earlier cell; it is not the measured outcome of the filmed assembly. Video is an optional process-data modality.
+**Project applications:** process-step recognition, tool and component identification, and scientific workflow understanding. Video and annotation can be scoped as optional capture layers in a new data project.
 
 ## C06 · Cell biology and immune assays
 
-**Specimens:** glioma-related cell preparations and cellular/immune-response comparisons, including astrocyte, microglial, macrophage and T-cell contexts. **Formats:** FCS, TIFF, XLSX and GraphPad Prism projects, with study documents.
+**Scientific systems:** glioma-related cell preparations and cellular/immune-response comparisons, including astrocyte, microglial, macrophage and T-cell contexts. **Formats:** FCS, TIFF, XLSX and GraphPad Prism projects.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation / unit | Scientific content |
 | --- | --- | --- |
-| Cytometry events | Floating-point event-by-channel arrays | Individual acquisition events; scatter and fluorescence pulse measurements |
-| Scatter and fluorescence channels | Header-defined signal scales | Forward/side scatter and labelled fluorescence channels; pulse area, height and width where recorded |
-| Acquisition metadata | Text, dates/times and parameter definitions | Instrument, acquisition timing, channel labels, numeric representation and byte order |
-| Protein-image exports | TIFF pixels | Chemiluminescent, colorimetric and composite views; these views can represent the same acquisition group |
-| Protein quantification | Numbers and formulas; source signal units and dimensionless ratios | Band/intensity summaries, control normalization and calculated relative signals |
-| Gene-expression tables | Numbers; cycle-threshold values and calculated ratios | Target/reference readings, ΔCt, ΔΔCt and relative expression calculations |
-| Viability | Numbers indexed by condition and observation point | CCK-8 response tables; verify the reader scale and time units from the source context |
-| Cell-damage assay | Optical density and calculated activity; U/mL where labelled | LDH standards, sample readings and researcher conversions |
-| Immunoassay calibration | Optical density and standard concentrations | Calibration and sample-response tables for ELISA measurements |
-| Protein/cytokine concentrations | Numbers; pg/mL or ng/mL as labelled | MIF, LGALS1 and IFNG assay results; units differ by analyte |
-| Immune-response summaries | Numbers and condition labels | Marker, proliferation and T-cell response summaries; retain each assay's measurement definition |
-| Statistical analysis | Prism project structures and researcher figures | Analysis state, tabulated results and presentation layers |
+| Cytometry signals | Event-by-channel numerical arrays | Scatter and fluorescence pulse measurements |
+| Acquisition context | Channel definitions and timestamps | Instrument, timing and parameter metadata |
+| Protein images | TIFF image exports | Chemiluminescent, colorimetric and composite views |
+| Protein quantification | Signal values and calculated ratios | Band-intensity summaries and normalized responses |
+| Gene expression | Cycle-threshold values and calculated ratios | Target/reference readings, ΔCt, ΔΔCt and relative expression |
+| Viability and cell damage | CCK-8 tables; LDH optical density and U/mL where labelled | Cellular-response measurements and assay calculations |
+| Immunoassay calibration | Optical density and standard concentrations | Calibration and sample-response tables |
+| Protein/cytokine response | pg/mL or ng/mL as labelled | MIF, LGALS1 and IFNG results |
+| Immune-response summaries | Numerical tables and condition labels | Marker, proliferation and T-cell response summaries |
+| Researcher analysis | Prism projects and figures | Statistical analysis and scientific presentation |
 
-**Interpretation:** native cytometry, image exports and spreadsheet-derived results have different provenance. Do not infer native qPCR or plate-reader files from a result table, or assume a shared specimen across assays without a mapping. Time/channel units and gating context must follow the acquisition rather than an assumed convention.
+**Project applications:** assay interpretation, quantitative response analysis and expert annotation of cellular evidence.
 
 ## C07 · Immunotherapy results
 
-**Observations:** animal-level entries grouped by treatment. **Formats:** XLSX, presentation figures and a study document.
+**Scientific records:** animal-level observations and treatment-group result tables. **Formats:** XLSX, study figures and supporting scientific context.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation | Scientific content |
 | --- | --- | --- |
-| Animal identifier | Identifier stored as a number | The recorded row identity within a sheet |
-| Treatment group | Text | Assigned group label as written on that sheet |
-| Numerical observations | Numbers or empty cells; units unspecified | Unheaded result columns; their physical meaning must not be inferred from the values |
-| Result summary | Number or formula; units unspecified | A separate result column, including a researcher-calculated entry |
-| Study figures and context | Figures and prose | The accompanying interpretation and study description |
+| Observation identity | Animal identifiers | Row-level indexing within study tables |
+| Study groups | Treatment labels | Recorded experimental group assignments |
+| Numerical observations | Result tables | Animal-level numerical entries |
+| Researcher summaries | Values and calculations | Study result summaries and calculated entries |
+| Scientific context | Figures and study descriptions | Researcher presentation of the experimental work |
 
-**Interpretation:** some treatment labels differ between sheets. The dictionary preserves that ambiguity; it does not relabel observations or assign an unconfirmed endpoint such as volume, mass or survival time.
+**Project applications:** expert annotation of study context and analysis of treatment-group result tables.
 
 ## C08 · Enzyme kinetics
 
-**Specimens:** an L-aspartate β-decarboxylase, its wild-type and double-mutant forms, and substrate comparisons. **Format:** DOCX with a kinetic-results table and assay context.
+**Scientific systems:** an L-aspartate β-decarboxylase, wild-type and double-mutant forms, and substrate comparisons. **Record:** DOCX with reported kinetic parameters and assay context.
 
-| Data field | Representation / unit | What it records |
+| Data type | Representation / unit | Scientific content |
 | --- | --- | --- |
-| Enzyme variant | Categorical label | Wild-type or mutant identity |
-| Substrate | Categorical label | The substrate condition associated with a result |
-| `Km` | Number with reported ± term; mM | Reported Michaelis constant |
-| `kcat` | Number with reported ± term; s⁻¹ | Reported turnover parameter |
-| `kcat/Km` | Number; mM⁻¹·s⁻¹ | Reported catalytic efficiency |
-| Detection status | Text, including `ND` | “Not detectable”; it is not a numerical zero |
-| Assay and analysis context | Text | Product detection by high-performance liquid chromatography (HPLC) and the stated analysis method |
+| Enzyme variant | Categorical labels | Wild-type and mutant identities |
+| Substrate | Categorical labels | Substrate associated with each kinetic result |
+| `Km` | mM with reported ± term | Michaelis constant |
+| `kcat` | s⁻¹ with reported ± term | Turnover parameter |
+| `kcat/Km` | mM⁻¹·s⁻¹ | Catalytic efficiency |
+| Detection status | Recorded status labels | Detectable and not-detectable responses |
+| Assay context | Method and analysis descriptions | HPLC-based product detection and kinetic-analysis context |
 
-**Interpretation:** these are reported fitted summaries. The document does not supply native chromatograms or the full substrate–response series. The meaning of the ± terms is not independently established by the table.
+**Project applications:** variant/substrate comparisons, kinetic-parameter interpretation and expert-labelled enzyme-performance tasks.
 
-## C09 · Additional cytometry
+## C09 · Cytometry acquisition records
 
-**Observation unit:** an event within an Attune NxT acquisition; biological specimen context is not established by the inspected headers. **Format:** FCS 3.1.
+**Acquisition system:** Attune NxT flow cytometry. **Format:** native FCS 3.1 files with event arrays and acquisition metadata.
 
-| Data field or group | Representation / unit | What it records |
+| Data type | Representation | Scientific content |
 | --- | --- | --- |
-| Event identifier | Numeric event field | Ordering/identity within the acquisition |
-| `Time` | Number; header-defined scale | Acquisition timing coordinate, not an assumed duration in seconds |
-| `FSC` / `SSC` | Floating-point pulse measurements | Forward/side scatter area, height and width where recorded |
-| Fluorescence channels | Floating-point pulse measurements | Recorded BL/YL channels with area, height and width variants |
-| Parameter definitions | Header strings and numeric settings | Channel names and acquisition representation |
-| Instrument and timing metadata | Text and timestamps | Instrument identification and acquisition times |
+| Event identity | Numeric event field | Ordering within an acquisition |
+| Acquisition time | Header-defined timing scale | Timing coordinate for recorded events |
+| Scatter signals | Floating-point pulse measurements | Forward/side scatter area, height and width |
+| Fluorescence signals | Floating-point pulse measurements | BL/YL channel area, height and width measurements |
+| Parameter definitions | Header strings and settings | Channel names and acquisition representation |
+| Instrument metadata | Text and timestamps | Instrument identity and acquisition timing |
 
-**Interpretation:** fluorescence channel names do not establish a biomarker identity, gate, phenotype or independent reference label. Events within one file share acquisition context.
+**Project applications:** event-level signal analysis, acquisition-quality assessment and interpretation of multichannel measurements.
 
-## Other archived materials
+## Define your dataset
 
-These holdings complete the archive map. They are reference, documentary or computational material rather than additional private laboratory acquisitions.
+Tell us the scientific task, data types and outcomes your AI needs to learn. We can scope historical-record retrieval, expert annotation, additional measurements and new experimental campaigns with partner scientists. Specimen links, metadata, validation and delivery formats are defined around the project.
 
-| Holding | Data types and structure | Record form |
-| --- | --- | --- |
-| Semiconductor process reference data | Unnamed numerical feature columns, missing-value markers, outcome labels and timestamps | SECOM text data and description files; public/reference collection |
-| Organoid assay reference data | Tissue-labelled worksheets, viability/ATP and caspase assay context, controls and time-point summaries | TransQST XLSX reference workbook |
-| Nuclei image reference collection | Image pixels, annotation JSON and foreground/background class mappings | JPEG/PNG, JSON and CSV; transformed reference collection |
-| Battery market reference tables | Country/category labels and chart-series values | CSV market/reference tables; not cell-test measurements |
-| Life-cycle assessment exports | Process/product labels, inventory/impact categories, units, model settings and calculated totals | SimaPro-derived XLSX tables and analysis figures |
-| Engineering design and simulation packages | CAD/mesh geometry, solver configuration, calculated fields and technical drawings | Engineering archives; not measured physical outcomes |
-| Theses, papers and review packages | Manuscript text, tables, figures, literature and supplementary documents | DOCX/PDF and associated archives; not presumed to contain native acquisitions |
-| Edited scientific demonstration media | Video, narration and separately authored visual/feature annotations | Presentation derivatives, including AI-assisted layers |
-| Proposals and buyer requests | Requested data types, proposed scopes and commercial descriptions | Documents describing work, not experimental observations |
+**Discuss your data needs:** [mehdi@vicena.ai](mailto:mehdi@vicena.ai) · [vicena.ai/experimental-data](https://vicena.ai/experimental-data)
 
-## Using this dictionary
-
-Choose a collection and the observation you want an AI to interpret or predict. The [benchmark input schema](data-dictionary.md) describes the narrower, frozen battery/catalyst interface already used in the pilot; the other collections here have not thereby become benchmark tasks.
-
-For a data project, agree the specimen/run mapping, measurement formats, required context, expert interpretation and independent outcomes. Historical records can be supplemented through scientist-led record recovery, separate annotations and new measurements; new work remains identifiable as new work. [Discuss the data you need with Vicena](https://vicena.ai/experimental-data).
+Updated 10 November 2026.
