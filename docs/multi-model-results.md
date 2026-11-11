@@ -56,6 +56,8 @@ Uniform random pair selection has an expected score of 6/12 for battery and 3.5/
 
 [Condition-block results](block-results.md) accompany the pooled errors; catalyst blocks have substantially different current scales.
 
+The [summary bar charts](../figures/README.md) average every completed attempt and show observed run ranges. They combine Opus hosting routes for a compact view; these detailed rows retain the separate routes. The [derived bar data](../results/model-bar-summary.json) provides all means, ranges and route counts.
+
 ## Completion and comparability
 
 Two attempts were planned per configuration/task. Some repeats were stopped before grading to reserve the approved budget for wider model coverage; others reached provider, response or time limits. Gemini produced no scorable final answer within the limits. Standard Sol failed interface qualification; Sol Pro completed both tasks. These are execution outcomes, not zero scientific scores. The JSON retains every attempt status.

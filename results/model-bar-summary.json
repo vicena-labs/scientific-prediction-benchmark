@@ -1,0 +1,452 @@
+{
+  "edition": "2026-11-10-horizontal-bars",
+  "source": "multi-model-summary.json",
+  "bar": "Arithmetic mean over all completed attempts, equally weighted",
+  "whisker": "Observed minimum to maximum across those attempts; not confidence intervals",
+  "opus": "Anthropic and Google hosting routes combined descriptively, without selecting a preferred route",
+  "baseline": "One reference row: robust trend for battery; linear tail for catalyst",
+  "tasks": {
+    "battery": {
+      "records": 10,
+      "pair_comparisons": 12,
+      "rows": [
+        {
+          "label": "Astra",
+          "supplier": "OpenAI",
+          "source_model_ids": [
+            "openai/gpt-6-astra"
+          ],
+          "completed_runs": 2,
+          "y": 0.0,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "openai/gpt-6-astra": 2
+          },
+          "forecast_error": {
+            "mean": 3.093598273351353,
+            "min": 3.0535982733513523,
+            "max": 3.1335982733513545
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 4,
+            "max": 6
+          }
+        },
+        {
+          "label": "Sol 6.1 Pro",
+          "supplier": "OpenAI",
+          "source_model_ids": [
+            "openai/gpt-6.1-sol-pro"
+          ],
+          "completed_runs": 2,
+          "y": 1.0,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "openai/gpt-6.1-sol-pro": 2
+          },
+          "forecast_error": {
+            "mean": 3.439873263315222,
+            "min": 3.128598273351352,
+            "max": 3.751148253279092
+          },
+          "correct_choices": {
+            "mean": 4.5,
+            "min": 4,
+            "max": 5
+          }
+        },
+        {
+          "label": "Luna",
+          "supplier": "OpenAI",
+          "source_model_ids": [
+            "openai/gpt-6-luna"
+          ],
+          "completed_runs": 2,
+          "y": 2.0,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "openai/gpt-6-luna": 2
+          },
+          "forecast_error": {
+            "mean": 3.3096482733513533,
+            "min": 3.3062982733513535,
+            "max": 3.312998273351353
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "Fable 5.2",
+          "supplier": "Anthropic",
+          "source_model_ids": [
+            "anthropic/claude-fable-5.2"
+          ],
+          "completed_runs": 2,
+          "y": 3.65,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "anthropic/claude-fable-5.2": 2
+          },
+          "forecast_error": {
+            "mean": 2.4954960792983947,
+            "min": 2.4206740041873203,
+            "max": 2.570318154409469
+          },
+          "correct_choices": {
+            "mean": 4,
+            "min": 4,
+            "max": 4
+          }
+        },
+        {
+          "label": "Opus 5.5",
+          "supplier": "Anthropic",
+          "source_model_ids": [
+            "anthropic/claude-opus-5.5",
+            "anthropic/claude-opus-5.5@google"
+          ],
+          "completed_runs": 3,
+          "y": 4.65,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "anthropic/claude-opus-5.5": 2,
+            "anthropic/claude-opus-5.5@google": 1
+          },
+          "forecast_error": {
+            "mean": 2.431422481641906,
+            "min": 2.2232946452581217,
+            "max": 2.620654645258125
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 3,
+            "max": 6
+          }
+        },
+        {
+          "label": "Grok 4.7",
+          "supplier": "xAI",
+          "source_model_ids": [
+            "x-ai/grok-4.7"
+          ],
+          "completed_runs": 1,
+          "y": 6.300000000000001,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "x-ai/grok-4.7": 1
+          },
+          "forecast_error": {
+            "mean": 3.411598273351352,
+            "min": 3.411598273351352,
+            "max": 3.411598273351352
+          },
+          "correct_choices": {
+            "mean": 4,
+            "min": 4,
+            "max": 4
+          }
+        },
+        {
+          "label": "V4 Pro 0813\u2020",
+          "supplier": "DeepSeek",
+          "source_model_ids": [
+            "deepseek/deepseek-v4-pro-0813"
+          ],
+          "completed_runs": 1,
+          "y": 7.950000000000001,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "deepseek/deepseek-v4-pro-0813": 1
+          },
+          "forecast_error": {
+            "mean": 3.1635982733513544,
+            "min": 3.1635982733513544,
+            "max": 3.1635982733513544
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "V4.1 Flash 1017",
+          "supplier": "DeepSeek",
+          "source_model_ids": [
+            "deepseek/deepseek-v4.1-flash-1017"
+          ],
+          "completed_runs": 1,
+          "y": 8.950000000000001,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "deepseek/deepseek-v4.1-flash-1017": 1
+          },
+          "forecast_error": {
+            "mean": 3.884148253279092,
+            "min": 3.884148253279092,
+            "max": 3.884148253279092
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "GLM 5.3\u2020",
+          "supplier": "Z.ai",
+          "source_model_ids": [
+            "z-ai/glm-5.3"
+          ],
+          "completed_runs": 2,
+          "y": 10.600000000000001,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "z-ai/glm-5.3": 2
+          },
+          "forecast_error": {
+            "mean": 6.039658904054107,
+            "min": 3.968134503001869,
+            "max": 8.111183305106346
+          },
+          "correct_choices": {
+            "mean": 3,
+            "min": 2,
+            "max": 4
+          }
+        }
+      ],
+      "baseline": {
+        "name": "robust_trend",
+        "y": 12.350000000000001,
+        "forecast_error": 3.313018033127814,
+        "correct_choices": 5
+      }
+    },
+    "catalyst": {
+      "records": 8,
+      "pair_comparisons": 7,
+      "rows": [
+        {
+          "label": "Astra",
+          "supplier": "OpenAI",
+          "source_model_ids": [
+            "openai/gpt-6-astra"
+          ],
+          "completed_runs": 1,
+          "y": 0.0,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "openai/gpt-6-astra": 1
+          },
+          "forecast_error": {
+            "mean": 14.173600972437178,
+            "min": 14.173600972437178,
+            "max": 14.173600972437178
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "Sol 6.1 Pro",
+          "supplier": "OpenAI",
+          "source_model_ids": [
+            "openai/gpt-6.1-sol-pro"
+          ],
+          "completed_runs": 2,
+          "y": 1.0,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "openai/gpt-6.1-sol-pro": 2
+          },
+          "forecast_error": {
+            "mean": 12.975475972437177,
+            "min": 12.518350972437178,
+            "max": 13.432600972437179
+          },
+          "correct_choices": {
+            "mean": 4,
+            "min": 4,
+            "max": 4
+          }
+        },
+        {
+          "label": "Luna",
+          "supplier": "OpenAI",
+          "source_model_ids": [
+            "openai/gpt-6-luna"
+          ],
+          "completed_runs": 1,
+          "y": 2.0,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "openai/gpt-6-luna": 1
+          },
+          "forecast_error": {
+            "mean": 14.857225972437178,
+            "min": 14.857225972437178,
+            "max": 14.857225972437178
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "Fable 5.2",
+          "supplier": "Anthropic",
+          "source_model_ids": [
+            "anthropic/claude-fable-5.2"
+          ],
+          "completed_runs": 1,
+          "y": 3.65,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "anthropic/claude-fable-5.2": 1
+          },
+          "forecast_error": {
+            "mean": 3.4575406597261806,
+            "min": 3.4575406597261806,
+            "max": 3.4575406597261806
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "Opus 5.5",
+          "supplier": "Anthropic",
+          "source_model_ids": [
+            "anthropic/claude-opus-5.5",
+            "anthropic/claude-opus-5.5@google"
+          ],
+          "completed_runs": 2,
+          "y": 4.65,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "anthropic/claude-opus-5.5": 2,
+            "anthropic/claude-opus-5.5@google": 0
+          },
+          "forecast_error": {
+            "mean": 6.038284548849876,
+            "min": 3.256268141341447,
+            "max": 8.820300956358304
+          },
+          "correct_choices": {
+            "mean": 5.5,
+            "min": 5,
+            "max": 6
+          }
+        },
+        {
+          "label": "Grok 4.7",
+          "supplier": "xAI",
+          "source_model_ids": [
+            "x-ai/grok-4.7"
+          ],
+          "completed_runs": 1,
+          "y": 6.300000000000001,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "x-ai/grok-4.7": 1
+          },
+          "forecast_error": {
+            "mean": 11.490350972437179,
+            "min": 11.490350972437179,
+            "max": 11.490350972437179
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "V4 Pro 0813\u2020",
+          "supplier": "DeepSeek",
+          "source_model_ids": [
+            "deepseek/deepseek-v4-pro-0813"
+          ],
+          "completed_runs": 2,
+          "y": 7.950000000000001,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "deepseek/deepseek-v4-pro-0813": 2
+          },
+          "forecast_error": {
+            "mean": 13.474361269069302,
+            "min": 13.473736269069303,
+            "max": 13.474986269069303
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "V4.1 Flash 1017",
+          "supplier": "DeepSeek",
+          "source_model_ids": [
+            "deepseek/deepseek-v4.1-flash-1017"
+          ],
+          "completed_runs": 2,
+          "y": 8.950000000000001,
+          "group_start": false,
+          "completed_runs_by_route": {
+            "deepseek/deepseek-v4.1-flash-1017": 2
+          },
+          "forecast_error": {
+            "mean": 13.36210097243718,
+            "min": 12.944600972437179,
+            "max": 13.779600972437178
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        },
+        {
+          "label": "GLM 5.3\u2020",
+          "supplier": "Z.ai",
+          "source_model_ids": [
+            "z-ai/glm-5.3"
+          ],
+          "completed_runs": 2,
+          "y": 10.600000000000001,
+          "group_start": true,
+          "completed_runs_by_route": {
+            "z-ai/glm-5.3": 2
+          },
+          "forecast_error": {
+            "mean": 14.88223112075324,
+            "min": 14.727361269069302,
+            "max": 15.037100972437178
+          },
+          "correct_choices": {
+            "mean": 5,
+            "min": 5,
+            "max": 5
+          }
+        }
+      ],
+      "baseline": {
+        "name": "linear_tail",
+        "y": 12.350000000000001,
+        "forecast_error": 15.454113885037332,
+        "correct_choices": 5
+      }
+    }
+  }
+}

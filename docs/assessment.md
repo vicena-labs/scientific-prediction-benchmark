@@ -35,7 +35,7 @@ Scientific relevance, replayable scoring and information sufficiency are separat
 
 Task definitions, aggregate results, original result history, model/provider coverage, scoring rules, the data dictionary and figures can be shared without releasing laboratory records. Maintainer audits replayed saved answers, model identities, request-history continuity, source extraction and baseline calculations. The repository's software demo and offline scorer can be run without model calls. Reproducing experimental scores still requires authorized access to the private case bundle.
 
-The figures show individual completed attempts rather than confidence intervals or best-of-two results. They identify the baseline and metric, keep provider configurations distinct, and label related records and unequal repetitions. Execution failures are not plotted as zero scientific accuracy.
+The current battery and catalyst figures show means across all completed attempts, with observed minimum–maximum whiskers rather than confidence intervals or best-of-two results. Models are grouped by supplier. Opus routes are pooled descriptively for the graphic, with route contributions and completed counts disclosed; the full tables retain every attempt and separate provider configurations. The battery chart uses the stronger robust-trend baseline and the catalyst chart uses linear tail. Execution failures are not plotted as zero scientific accuracy.
 
 ## What the next benchmark version needs
 

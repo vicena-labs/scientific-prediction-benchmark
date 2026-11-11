@@ -53,7 +53,7 @@ These fractions count **completed model attempts on reused records**, not indepe
 
 ![Battery benchmark: 15 of 16 completed model attempts reduced forecast error against carry-forward, but only 3 of 16 made more correct pair choices.](figures/01-forecast-and-choice.png)
 
-The roster covers Astra, Sol 6.1 Pro, Luna, Fable 5.2, Opus 5.5, Grok 4.7, DeepSeek V4 Pro 0813, DeepSeek V4.1 Flash 1017 and GLM 5.3. Opus provider routes are reported separately. Attempts that did not produce a scorable answer are recorded as execution outcomes, never zero scientific scores. Repetitions are unequal and provider format adaptations are disclosed.
+The roster covers Astra, Sol 6.1 Pro, Luna, Fable 5.2, Opus 5.5, Grok 4.7, DeepSeek V4 Pro 0813, DeepSeek V4.1 Flash 1017 and GLM 5.3. Opus provider routes are reported separately in the full tables and combined descriptively in the summary bars. Attempts that did not produce a scorable answer are recorded as execution outcomes, never zero scientific scores. Repetitions are unequal and provider format adaptations are disclosed.
 
 **Astra's battery choices were 6/12 and 4/12**, averaging the baseline's 5/12; its forecasts had lower error. The earlier native-notebook 3/12 result remains in the historical record but does not represent all Astra results. Separate subscription follow-ups show improvement with more early data, success with calibration-based cell selection, and successful interpretation of measured formulation performance. Those studies are not pooled with the multi-model comparison.
 
@@ -61,11 +61,11 @@ Read the [full multi-model results](docs/multi-model-results.md), [condition-blo
 
 ## Figures
 
-- [All-model battery comparison](figures/02-battery-models.png): forecast error and choices, showing both baselines and every completed attempt.
-- [All-model catalyst comparison](figures/03-catalyst-models.png): the same metrics on a separate task and scale.
+- [All-model battery comparison](figures/02-battery-models.png): supplier-grouped mean bars, observed run ranges and the stronger robust-trend baseline.
+- [All-model catalyst comparison](figures/03-catalyst-models.png): the same metrics on a separate task and scale, against linear-tail extrapolation.
 - [Astra with longer early-cycle prefixes](figures/04-astra-more-data.png): a separate subscription study.
 - [Astra's cell-selection follow-up](figures/05-astra-selection.png): the effect of the revised method-assisted assignment on reused records.
-- [Square PDF figure collection](figures/Vicena_Scientific_Benchmark_Results.pdf) and [figure notes / editable SVGs](figures/README.md).
+- [Two-page square PDF](figures/Vicena_Scientific_Benchmark_Results.pdf) and [figure notes / editable SVGs](figures/README.md). The current PDF contains only the battery and catalyst bar charts; the Astra follow-ups above remain separate earlier figures.
 
 ## Explore
 
