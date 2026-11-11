@@ -1,0 +1,59 @@
+{
+  "scope": "Separate Astra subscription development studies; not pooled with the OpenRouter comparison.",
+  "cycling_cutoffs": {
+    "cutoffs": [
+      50,
+      100,
+      150
+    ],
+    "same_traces": 10,
+    "astra_mae_pp": [
+      2.64,
+      2.01,
+      0.78
+    ],
+    "carry_forward_mae_pp": [
+      5.56,
+      4.95,
+      3.4
+    ],
+    "robust_trend_mae_pp": [
+      3.31,
+      2.63,
+      1.74
+    ],
+    "astra_unique_group_winners": [
+      0,
+      1,
+      3
+    ],
+    "groups": 3,
+    "precision": "Rounded as in the reviewed battery prediction report.",
+    "endpoint": "Later mean-window retention; a median-window sensitivity changes the forecast ordering at 150 cycles."
+  },
+  "grading_selection": {
+    "cells": 8,
+    "groups": 3,
+    "attempts_per_version": 6,
+    "initial_astra_correct": 1,
+    "revised_astra_correct": 6,
+    "formation_baseline_correct": 2,
+    "voltage_baseline_correct": 6,
+    "change": "Prompt, candidate methods and calibration validation changed together after outcome-aware development; same input measurements."
+  },
+  "formulation_interpretation": {
+    "attempts": 2,
+    "numerical_passes": 2,
+    "proposed_experiments": "Plausible under assistant review; no measured outcome or independent expert adjudication."
+  },
+  "formulation_prediction": {
+    "attempts": 2,
+    "retention_correct": 0,
+    "absolute_capacity_correct": 0,
+    "conductivity_policy_retention_correct": 0,
+    "conductivity_policy_capacity_correct": 0,
+    "control_policy_retention_correct": 2,
+    "control_policy_capacity_correct": 0,
+    "scope": "One reused five-dose series; all rate results hidden, no labelled calibration; low-confidence predictions."
+  }
+}

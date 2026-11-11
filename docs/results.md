@@ -1,8 +1,8 @@
-# Pilot results and evidence limits
+# Earlier Astra pilots and evidence limits
 
 > [Benchmark](../README.md) · [Protocol](protocol.md) · [Aggregate JSON](../results/pilot-summary.json)
 
-As of 10 November 2026. These are all completed Astra attempts on this paired-outcome task version, plus the excluded application attempt. The source records, targets and comparisons are the same; the harnesses and prompts differ. Rows are not repeated independent trials and are not pooled.
+This historical page records the 9 November 2026 Astra pilots, plus the excluded application attempt. The [10 November multi-model comparison](multi-model-results.md) and [current assessment](assessment.md) supersede this page as the overall result summary. The source records, targets and comparisons are the same; the harnesses and prompts differ. Rows are not repeated independent trials and are not pooled.
 
 | Setup, all run on 9 November | Battery correct choices | Battery error, percentage points | Catalyst correct choices | Catalyst error, mA |
 | --- | ---: | ---: | ---: | ---: |
@@ -36,15 +36,15 @@ In the notebook run, Astra made fewer correct battery selections than either bas
 
 Astra's Brier scores were 0.273 for battery and 0.176 for catalyst, against 0.25 for a constant 50/50 forecast. Its probability distributions were based on explicit judgmental assumptions, not independently calibrated frequencies. Small numerical errors can still reverse close rankings, and uncertainty over future behavior remains substantial.
 
-## Model coverage
+## Model coverage in these earlier setups
 
 | Model | Requested ID | Status for this exact paired-outcome version |
 | --- | --- | --- |
 | Astra | `openai/gpt-6-astra` | Completed in the three setups above |
-| Sol | `openai/gpt-6.1-sol` | No registered run yet |
-| Luna | `openai/gpt-6-luna` | No registered run yet |
+| Sol | `openai/gpt-6.1-sol` | Not run in these setups |
+| Luna | `openai/gpt-6-luna` | Not run in these setups |
 
-Sol and Luna were used in earlier record-reading and prediction studies with different questions. Those scores are omitted from this table because they are not a matched comparison. No new inference was performed to package this public release.
+Sol and Luna were used in earlier studies with different questions; those scores are not pooled here. The later shared-harness comparison now includes Astra, Sol 6.1 Pro, Luna and six other models. See [all completed attempts](multi-model-results.md). No new inference was performed to update this public release.
 
 ## Evidence and reproducibility
 

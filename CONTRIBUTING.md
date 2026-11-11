@@ -2,7 +2,7 @@
 
 > [Benchmark](README.md) · [Protocol](docs/protocol.md)
 
-Useful contributions include a scorer bug with a minimal invented fixture, an independently measured task with a defensible endpoint, or a preregistered matched run for Astra, Sol and Luna.
+Useful contributions include a scorer bug with a minimal invented fixture, an independently measured task with a defensible endpoint, or a preregistered model comparison with matched tasks and execution settings.
 
 Do not upload private laboratory data, recipes, reference answers, institutional identifiers, raw model sessions or credentials in issues or pull requests. Use a clearly labelled fabricated software example to reproduce a bug. Private data access is handled separately through Vicena.
 

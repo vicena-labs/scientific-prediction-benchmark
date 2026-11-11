@@ -1,0 +1,1472 @@
+{
+  "edition": "2026-11-10-assessment",
+  "scope": "Retrospective private-data development study; aggregate metrics only.",
+  "completed_attempts": 30,
+  "distinct_models_with_scored_answers": 9,
+  "independent_experiment_count": "Not inferred from attempts or pair counts.",
+  "protocol": {
+    "reasoning": "high",
+    "seconds_per_attempt": 600,
+    "python_calls": 60,
+    "responses": 16,
+    "output_tokens_per_response": 16384,
+    "web_search": false,
+    "repeats": "Two planned per model/task; completions unequal. All statuses retained.",
+    "format_adaptation": "GLM 5.3 and DeepSeek V4 Pro omit API response_format and validate the same schema locally.",
+    "routes": "Opus 5.5 Anthropic and Google routes remain separate configurations."
+  },
+  "tasks": {
+    "battery": {
+      "completed_attempts": 16,
+      "records": 10,
+      "related_pair_comparisons": 12,
+      "unit": "retention percentage points",
+      "primary_baseline": "carry_forward",
+      "baselines": {
+        "carry_forward": {
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 5.562261695231615,
+          "mean_regret": 0.89682680806562,
+          "brier": 0.5833333333333334,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 2.594146786181805
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 12.026104862827003
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 2.940465501322432
+            }
+          }
+        },
+        "robust_trend": {
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 3.313018033127814,
+          "mean_regret": 0.4507254501824936,
+          "brier": 0.5833333333333334,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.278523284327714
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 8.101203086634342
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.247750304597993
+            }
+          }
+        }
+      },
+      "attempts_better_forecast_than_primary": 15,
+      "attempts_more_correct_choices_than_primary": 3
+    },
+    "catalyst": {
+      "completed_attempts": 14,
+      "records": 8,
+      "related_pair_comparisons": 7,
+      "unit": "mA",
+      "primary_baseline": "linear_tail",
+      "baselines": {
+        "carry_forward": {
+          "correct_pairs": 4,
+          "scored_pairs": 7,
+          "mae": 16.914112847437178,
+          "mean_regret": 0.4678467288719104,
+          "brier": 0.42857142857142855,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 0,
+              "scored_pairs": 1,
+              "mae": 0.3903307643267174
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 26.80621143046306
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 18.037868986484938
+            }
+          }
+        },
+        "linear_tail": {
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 15.454113885037332,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.2857142857142857,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.21482917503687968
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 24.589335938878676
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 16.47841497119629
+            }
+          }
+        }
+      },
+      "attempts_better_forecast_than_primary": 14,
+      "attempts_more_correct_choices_than_primary": 1
+    }
+  },
+  "models": [
+    {
+      "task": "battery",
+      "model_id": "openai/gpt-6-astra",
+      "label": "Astra",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 6,
+          "scored_pairs": 12,
+          "mae": 3.1335982733513545,
+          "mean_regret": 0.41493928270173086,
+          "brier": 0.24315266666666666,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 1.284809443636315
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 7.887421095685563
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 0.9548227788869781
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "mae": 3.0535982733513523,
+          "mean_regret": 0.5072323213694325,
+          "brier": 0.24561666666666668,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.2848094436363102
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 7.754087762352228
+            },
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 0.8548227788869767
+            }
+          }
+        }
+      ],
+      "mean_mae": 3.093598273351353,
+      "mean_correct": 5,
+      "mean_brier": 0.24438466666666667,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6-astra-20260903",
+        "model": "openai/gpt-6-astra",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "openai/gpt-6.1-sol-pro",
+      "label": "Sol 6.1 Pro",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 3.751148253279092,
+          "mean_regret": 0.8500233901334037,
+          "brier": 0.264039,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 1.0681427769696417
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 9.237421095685567
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.648697728706324
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "mae": 3.128598273351352,
+          "mean_regret": 0.5072323213694325,
+          "brier": 0.25043058333333335,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.301476110302976
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 7.940754429018895
+            },
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 0.8898227788869768
+            }
+          }
+        }
+      ],
+      "mean_mae": 3.439873263315222,
+      "mean_correct": 4.5,
+      "mean_brier": 0.2572347916666667,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6.1-sol-pro-20260929",
+        "model": "openai/gpt-6.1-sol-pro",
+        "precision": "unknown",
+        "route": "openai",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "anthropic/claude-fable-5.2",
+      "label": "Fable 5.2",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "mae": 2.4206740041873203,
+          "mean_regret": 0.9065302613203426,
+          "brier": 0.304275,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 0.9798342537184274
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 5.587421095685561
+            },
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 1.1262434984153096
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "mae": 2.570318154409469,
+          "mean_regret": 0.8858095576141665,
+          "brier": 0.2521083333333333,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.2552363906211024
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 4.320754429018895
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 2.2438022712936743
+            }
+          }
+        }
+      ],
+      "mean_mae": 2.4954960792983947,
+      "mean_correct": 4,
+      "mean_brier": 0.27819166666666667,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "anthropic/claude-fable-5.2-20261109",
+        "model": "anthropic/claude-fable-5.2",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "anthropic/claude-opus-5.5",
+      "label": "Opus 5.5 · Anthropic route",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 6,
+          "scored_pairs": 12,
+          "mae": 2.2232946452581217,
+          "mean_regret": 0.3845151257408321,
+          "brier": 0.24250000000000002,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.4885697239544318
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 5.254087762352228
+            },
+            "HT-unspecified": {
+              "correct_pairs": 2,
+              "scored_pairs": 6,
+              "mae": 0.5012434984153096
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 3,
+          "scored_pairs": 12,
+          "mae": 2.4503181544094703,
+          "mean_regret": 0.9423164288011053,
+          "brier": 0.2700416666666667,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.9885697239544367
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 4.320754429018895
+            },
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 1.3938022712936764
+            }
+          }
+        }
+      ],
+      "mean_mae": 2.336806399833796,
+      "mean_correct": 4.5,
+      "mean_brier": 0.25627083333333334,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+        "model": "anthropic/claude-opus-5.5",
+        "precision": "unknown",
+        "route": "anthropic",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "anthropic/claude-opus-5.5@google",
+      "label": "Opus 5.5 · Google route",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 6,
+          "scored_pairs": 12,
+          "mae": 2.620654645258125,
+          "mean_regret": 0.7838130656917421,
+          "brier": 0.260375,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 1.721903057287771
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 6.220754429018892
+            },
+            "HT-unspecified": {
+              "correct_pairs": 2,
+              "scored_pairs": 6,
+              "mae": 0.5946434984153157
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "provider_error"
+        }
+      ],
+      "mean_mae": 2.620654645258125,
+      "mean_correct": 6,
+      "mean_brier": 0.260375,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+        "model": "anthropic/claude-opus-5.5",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "google/gemini-4-carbon",
+      "label": "Gemini 4 Carbon",
+      "planned_attempts": 2,
+      "scored_attempts": 0,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "transport_error"
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": null,
+      "mean_correct": null,
+      "mean_brier": null,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "google/gemini-4-carbon-20261110",
+        "model": "google/gemini-4-carbon",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "x-ai/grok-4.7",
+      "label": "Grok 4.7",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "mae": 3.411598273351352,
+          "mean_regret": 0.9326129755463827,
+          "brier": 0.33791666666666664,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.4614761103029725
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 8.374087762352227
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.1523227788869796
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": 3.411598273351352,
+      "mean_correct": 4,
+      "mean_brier": 0.33791666666666664,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "x-ai/grok-4.7-20260916",
+        "model": "x-ai/grok-4.7",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "deepseek/deepseek-v4-pro-0813",
+      "label": "DeepSeek V4 Pro 0813†",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 3.1635982733513544,
+          "mean_regret": 0.4507254501824936,
+          "brier": 0.298075,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.2514761103029788
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 7.720754429018896
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.1798227788869795
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "round_limit"
+        }
+      ],
+      "mean_mae": 3.1635982733513544,
+      "mean_correct": 5,
+      "mean_brier": 0.298075,
+      "route_metadata": {
+        "api_response_format": "prompt_only",
+        "canonical_slug": "deepseek/deepseek-v4-pro-20260813",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "precision": "fp8",
+        "route": "deepinfra/fp8",
+        "weight_access": "open weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "deepseek/deepseek-v4.1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 3.884148253279092,
+          "mean_regret": 0.89682680806562,
+          "brier": 0.41980833333333334,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 1.2848094436363102
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 9.587421095685562
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.5561977287063264
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "round_limit"
+        }
+      ],
+      "mean_mae": 3.884148253279092,
+      "mean_correct": 5,
+      "mean_brier": 0.41980833333333334,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "deepseek/deepseek-v4.1-flash-20261017",
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "precision": "fp8",
+        "route": "deepinfra/fp8",
+        "weight_access": "open weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "z-ai/glm-5.3",
+      "label": "GLM 5.3†",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 2,
+          "scored_pairs": 12,
+          "mae": 8.111183305106346,
+          "mean_regret": 1.156190974249976,
+          "brier": 0.3379666666666667,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 3.921903057287769
+            },
+            "45C": {
+              "correct_pairs": 0,
+              "scored_pairs": 3,
+              "mae": 3.4569715980084843
+            },
+            "HT-unspecified": {
+              "correct_pairs": 0,
+              "scored_pairs": 6,
+              "mae": 14.743802271293674
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 12,
+          "mae": 3.968134503001869,
+          "mean_regret": 0.8858095576141665,
+          "brier": 0.32215,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.0114302760455633
+            },
+            "45C": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 9.657421095685564
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.9186977287063272
+            }
+          }
+        }
+      ],
+      "mean_mae": 6.039658904054107,
+      "mean_correct": 3,
+      "mean_brier": 0.33005833333333334,
+      "route_metadata": {
+        "api_response_format": "prompt_only",
+        "canonical_slug": "z-ai/glm-5.3-20260816",
+        "model": "z-ai/glm-5.3",
+        "precision": "fp8",
+        "route": "novita/fp8",
+        "weight_access": "open weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "openai/gpt-6-luna",
+      "label": "Luna",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 3.3062982733513535,
+          "mean_regret": 0.4507254501824936,
+          "brier": 0.3864354166666667,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.278142776969645
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 8.07642109568556
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.2498227788869798
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 12,
+          "mae": 3.312998273351353,
+          "mean_regret": 0.4507254501824936,
+          "brier": 0.25022500000000003,
+          "blocks": {
+            "25C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 1.2784761103029751
+            },
+            "45C": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 8.101087762352227
+            },
+            "HT-unspecified": {
+              "correct_pairs": 1,
+              "scored_pairs": 6,
+              "mae": 1.247822778886981
+            }
+          }
+        }
+      ],
+      "mean_mae": 3.3096482733513533,
+      "mean_correct": 5,
+      "mean_brier": 0.31833020833333336,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6-luna-20260922",
+        "model": "openai/gpt-6-luna",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "battery",
+      "model_id": "openai/gpt-6.1-sol",
+      "label": "Sol 6.1",
+      "planned_attempts": 2,
+      "scored_attempts": 0,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "not_run_preflight_failed"
+        },
+        {
+          "repetition": 2,
+          "status": "not_run_preflight_failed"
+        }
+      ],
+      "mean_mae": null,
+      "mean_correct": null,
+      "mean_brier": null,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6.1-sol-20260929",
+        "model": "openai/gpt-6.1-sol",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "openai/gpt-6-astra",
+      "label": "Astra",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 14.173600972437178,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.15560342857142856,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.1002832643267175
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 22.48848143046306
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 15.24093231981827
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": 14.173600972437178,
+      "mean_correct": 5,
+      "mean_brier": 0.15560342857142856,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6-astra-20260903",
+        "model": "openai/gpt-6-astra",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "openai/gpt-6.1-sol-pro",
+      "label": "Sol 6.1 Pro",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 7,
+          "mae": 13.432600972437179,
+          "mean_regret": 0.5484653820399207,
+          "brier": 0.1628,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.1062832643267175
+            },
+            "NF-DC": {
+              "correct_pairs": 0,
+              "scored_pairs": 3,
+              "mae": 21.321814763796393
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 14.427598986484938
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 4,
+          "scored_pairs": 7,
+          "mae": 12.518350972437178,
+          "mean_regret": 0.5484653820399207,
+          "brier": 0.16272857142857144,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.1042832643267175
+            },
+            "NF-DC": {
+              "correct_pairs": 0,
+              "scored_pairs": 3,
+              "mae": 20.011814763796394
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 13.300932319818271
+            }
+          }
+        }
+      ],
+      "mean_mae": 12.975475972437177,
+      "mean_correct": 4,
+      "mean_brier": 0.16276428571428572,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6.1-sol-pro-20260929",
+        "model": "openai/gpt-6.1-sol-pro",
+        "precision": "unknown",
+        "route": "openai",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "anthropic/claude-fable-5.2",
+      "label": "Fable 5.2",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 3.4575406597261806,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.1715,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.07428326432671747
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 5.684851902870275
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 3.485734346848395
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": 3.4575406597261806,
+      "mean_correct": 5,
+      "mean_brier": 0.1715,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "anthropic/claude-fable-5.2-20261109",
+        "model": "anthropic/claude-fable-5.2",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "anthropic/claude-opus-5.5",
+      "label": "Opus 5.5 · Anthropic route",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 6,
+          "scored_pairs": 7,
+          "mae": 3.256268141341447,
+          "mean_regret": 0.0041930140413672145,
+          "brier": 0.20361428571428572,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 0,
+              "scored_pairs": 1,
+              "mae": 0.21467554914478526
+            },
+            "NF-DC": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 5.148481430463058
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 3.39178324701761
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 8.820300956358304,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.1774857142857143,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.07532445085521478
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 8.918185236203609
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 14.55240101351506
+            }
+          }
+        }
+      ],
+      "mean_mae": 6.038284548849876,
+      "mean_correct": 5.5,
+      "mean_brier": 0.19055,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+        "model": "anthropic/claude-opus-5.5",
+        "precision": "unknown",
+        "route": "anthropic",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "anthropic/claude-opus-5.5@google",
+      "label": "Opus 5.5 · Google route",
+      "planned_attempts": 2,
+      "scored_attempts": 0,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "provider_error"
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": null,
+      "mean_correct": null,
+      "mean_brier": null,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "anthropic/claude-opus-5.5-20260921",
+        "model": "anthropic/claude-opus-5.5",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "google/gemini-4-carbon",
+      "label": "Gemini 4 Carbon",
+      "planned_attempts": 2,
+      "scored_attempts": 0,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "transport_error"
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": null,
+      "mean_correct": null,
+      "mean_brier": null,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "google/gemini-4-carbon-20261110",
+        "model": "google/gemini-4-carbon",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "x-ai/grok-4.7",
+      "label": "Grok 4.7",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 11.490350972437179,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.18648571428571428,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.12728326432671744
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 18.791814763796392
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 11.764265653151606
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": 11.490350972437179,
+      "mean_correct": 5,
+      "mean_brier": 0.18648571428571428,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "x-ai/grok-4.7-20260916",
+        "model": "x-ai/grok-4.7",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "deepseek/deepseek-v4-pro-0813",
+      "label": "DeepSeek V4 Pro 0813†",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 13.473736269069303,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.23465714285714287,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.07082445085521477
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 21.611814763796392
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 14.270932319818272
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 13.474986269069303,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.2100142857142857,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.07082445085521477
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 21.615148097129726
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 14.270932319818272
+            }
+          }
+        }
+      ],
+      "mean_mae": 13.474361269069302,
+      "mean_correct": 5,
+      "mean_brier": 0.2223357142857143,
+      "route_metadata": {
+        "api_response_format": "prompt_only",
+        "canonical_slug": "deepseek/deepseek-v4-pro-20260813",
+        "model": "deepseek/deepseek-v4-pro-0813",
+        "precision": "fp8",
+        "route": "deepinfra/fp8",
+        "weight_access": "open weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "deepseek/deepseek-v4.1-flash-1017",
+      "label": "DeepSeek V4.1 Flash 1017",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 13.779600972437178,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.24622857142857146,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.07428326432671745
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 22.015148097129725
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 14.680932319818272
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 12.944600972437179,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.17487142857142857,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.13428326432671747
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 20.615148097129726
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 13.814265653151606
+            }
+          }
+        }
+      ],
+      "mean_mae": 13.36210097243718,
+      "mean_correct": 5,
+      "mean_brier": 0.21055000000000001,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "deepseek/deepseek-v4.1-flash-20261017",
+        "model": "deepseek/deepseek-v4.1-flash-1017",
+        "precision": "fp8",
+        "route": "deepinfra/fp8",
+        "weight_access": "open weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "z-ai/glm-5.3",
+      "label": "GLM 5.3†",
+      "planned_attempts": 2,
+      "scored_attempts": 2,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 14.727361269069302,
+          "mean_regret": 0.35277114650831415,
+          "brier": 0.13747142857142858,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.06532445085521477
+            },
+            "NF-DC": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 23.615148097129726
+            },
+            "NF-IMP": {
+              "correct_pairs": 2,
+              "scored_pairs": 3,
+              "mae": 15.614265653151605
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 15.037100972437178,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.20525714285714286,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.13428326432671747
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 23.97848143046306
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 16.03093231981827
+            }
+          }
+        }
+      ],
+      "mean_mae": 14.88223112075324,
+      "mean_correct": 5,
+      "mean_brier": 0.17136428571428572,
+      "route_metadata": {
+        "api_response_format": "prompt_only",
+        "canonical_slug": "z-ai/glm-5.3-20260816",
+        "model": "z-ai/glm-5.3",
+        "precision": "fp8",
+        "route": "novita/fp8",
+        "weight_access": "open weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "openai/gpt-6-luna",
+      "label": "Luna",
+      "planned_attempts": 2,
+      "scored_attempts": 1,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "scored",
+          "correct_pairs": 5,
+          "scored_pairs": 7,
+          "mae": 14.857225972437178,
+          "mean_regret": 0.4636537148305432,
+          "brier": 0.2308142857142857,
+          "blocks": {
+            "GC": {
+              "correct_pairs": 1,
+              "scored_pairs": 1,
+              "mae": 0.1647832643267175
+            },
+            "NF-DC": {
+              "correct_pairs": 1,
+              "scored_pairs": 3,
+              "mae": 23.695148097129724
+            },
+            "NF-IMP": {
+              "correct_pairs": 3,
+              "scored_pairs": 3,
+              "mae": 15.814265653151605
+            }
+          }
+        },
+        {
+          "repetition": 2,
+          "status": "operator_stop"
+        }
+      ],
+      "mean_mae": 14.857225972437178,
+      "mean_correct": 5,
+      "mean_brier": 0.2308142857142857,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6-luna-20260922",
+        "model": "openai/gpt-6-luna",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    },
+    {
+      "task": "catalyst",
+      "model_id": "openai/gpt-6.1-sol",
+      "label": "Sol 6.1",
+      "planned_attempts": 2,
+      "scored_attempts": 0,
+      "attempts": [
+        {
+          "repetition": 1,
+          "status": "not_run_preflight_failed"
+        },
+        {
+          "repetition": 2,
+          "status": "not_run_preflight_failed"
+        }
+      ],
+      "mean_mae": null,
+      "mean_correct": null,
+      "mean_brier": null,
+      "route_metadata": {
+        "api_response_format": "strict_json_schema",
+        "canonical_slug": "openai/gpt-6.1-sol-20260929",
+        "model": "openai/gpt-6.1-sol",
+        "precision": "provider managed",
+        "route": "price-filtered, no fallback",
+        "weight_access": "closed weights"
+      }
+    }
+  ]
+}

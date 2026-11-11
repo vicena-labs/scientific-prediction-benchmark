@@ -15,6 +15,14 @@ Version 0.1 describes the existing paired-outcome pilot. Scientific cutoffs, tar
 
 The earlier isolated local profile used a ten-minute limit and an OS-restricted Python tool. Its results are kept separate from Vicena's native notebooks. Provider interfaces, reasoning budgets and automatic account context may differ; the current app pilot is a model-plus-application evaluation.
 
+## Shared OpenRouter comparison, 10 November
+
+The later comparison preserves the original task packets, measured endpoints, pair assignments and scorer. It uses an isolated Python workspace with no web, high reasoning, a 600-second attempt limit, 60 Python calls, 16 responses and at most 16,384 output tokens per response. Two attempts were planned per model/provider configuration and task. All completed attempts and every incomplete status are retained; completions are unequal. The [result table](multi-model-results.md) and [aggregate metadata](../results/multi-model-summary.json) identify exact models, provider routes, execution outcomes and API-format adaptations.
+
+A synthetic file-reading qualification preceded scientific calls. GLM 5.3 and DeepSeek V4 Pro use prompt-specified JSON with local validation because their route does not accept the same API response-format control. The scientific schema is unchanged. Opus's Anthropic and Google routes remain separate configurations. Equal effort labels and time limits do not establish equal internal compute. Saved request prefixes, input hashes, tool isolation and scoring were audited offline; no new inference was used for this release.
+
+The [Astra follow-ups](../tasks/followups.md) are separate subscription studies with their own prompts, targets and controls. They must not be averaged into this comparison. The public CLI implements the original battery and catalyst tasks, not the follow-up runners.
+
 ## Scores
 
 The primary score is pairwise selection accuracy **separately for each task**. Probability ≥0.5 selects the first candidate. Equal measured endpoints within absolute 1e-10 are excluded from accuracy and Brier calculations. Secondary metrics are endpoint mean absolute error, decision regret and Brier score. Report each electrode/condition block as well as the task total.
@@ -27,6 +35,6 @@ Do not combine battery percentage points and catalyst milliamperes into one scor
 
 This is retrospective development evidence on previously inspected records. The held-out numbers were hidden from each tested attempt, but the data is not a pristine, newly collected benchmark. Outcomes are recorded experimental measurements; the task questions, aliases and grading are authored evaluation materials. The public demo is fabricated software test data and is never scored as laboratory evidence.
 
-The present tasks test outcome extrapolation and choice. They do not validate autonomous experimental design, causal discovery, formulation optimization, safety of a laboratory procedure, or a benefit from training on these records. A stronger study needs independently held-out batches/specimens and confirmed acquisition context. Additional model runs should be preregistered, with the same packets and controls for Astra, Sol and Luna.
+The present tasks test outcome extrapolation and choice. They do not validate autonomous experimental design, causal discovery, formulation optimization, safety of a laboratory procedure, or a benefit from training on these records. A stronger study needs independently held-out batches/specimens and confirmed acquisition context. Additional model runs should be preregistered, with the same packets and controls for every selected model.
 
 Private laboratory records remain private. Public reports may include aggregate metrics and protocol metadata, but no per-record predictions, endpoints, recipes, original filenames, institutions or data-bearing transcripts without a separate release decision.

@@ -40,18 +40,32 @@ Or run `uv run --locked vicena-science-benchmark demo`.
 
 The demo uses clearly labelled fabricated arithmetic controls. It makes no model calls, consumes no API credits and is not experimental evidence. For a private dataset, follow [the evaluation workflow](docs/reproduce.md). This tool does not launch models or enforce their filesystem/network isolation.
 
-## Pilot findings
+## Results: nine models, two scientific tasks
 
-Latest completed setup: Astra through Vicena's native notebooks, High effort, one attempt per task on 9 November 2026.
+Updated 10 November 2026. The shared Python comparison has **30 completed attempts across nine models**, with later measurements hidden from every tested attempt. Forecasting improved more consistently than candidate selection.
 
-| Task | Astra correct pair choices | Primary baseline | Astra mean forecast error | Primary baseline error |
-| --- | ---: | ---: | ---: | ---: |
-| Battery | 3/12 | 5/12 | 3.519 retention percentage points | 5.562 percentage points |
-| Catalyst | 5/7 | 5/7 | 11.717 mA | 15.454 mA |
+| Task | Completed attempts | Lower forecast error than primary baseline | More correct choices than primary baseline |
+| --- | ---: | ---: | ---: |
+| Battery | 16 | 15/16 | 3/16 |
+| Catalyst | 14 | 14/14 | 1/14 |
 
-The stronger secondary battery baseline had error 3.313 percentage points, better than Astra. Forecast accuracy and choice accuracy can therefore tell different stories. The fractions count comparisons between records: twelve battery pairs share ten traces, and seven catalyst pairs share eight scans. They are not 19 independent experiments.
+These fractions count **completed model attempts on reused records**, not independent experiments. Battery comparisons share 10 traces and catalyst comparisons share 8 scans. The primary baselines scored 5/12 battery choices and 5/7 catalyst choices. The stronger battery trend baseline also scored 5/12, and 11/16 attempts beat its forecast error.
 
-The model scope is **Astra, Sol and Luna**. Only Astra has completed this exact paired-outcome version. Sol and Luna have no scores on it yet; earlier tests using different questions are not pooled into this table. All three available Astra setups, including the earlier 6/12 battery result, are disclosed in [the result history](docs/results.md). These are small retrospective development runs, not a general leaderboard or evidence that one model cannot do science.
+![Battery benchmark: 15 of 16 completed model attempts reduced forecast error against carry-forward, but only 3 of 16 made more correct pair choices.](figures/01-forecast-and-choice.png)
+
+The roster covers Astra, Sol 6.1 Pro, Luna, Fable 5.2, Opus 5.5, Grok 4.7, DeepSeek V4 Pro 0813, DeepSeek V4.1 Flash 1017 and GLM 5.3. Opus provider routes are reported separately. Attempts that did not produce a scorable answer are recorded as execution outcomes, never zero scientific scores. Repetitions are unequal and provider format adaptations are disclosed.
+
+**Astra's battery choices were 6/12 and 4/12**, averaging the baseline's 5/12; its forecasts had lower error. The earlier native-notebook 3/12 result remains in the historical record but does not represent all Astra results. Separate subscription follow-ups show improvement with more early data, success with calibration-based cell selection, and successful interpretation of measured formulation performance. Those studies are not pooled with the multi-model comparison.
+
+Read the [full multi-model results](docs/multi-model-results.md), [condition-block breakdown](docs/block-results.md), [assessment of strengths and gaps](docs/assessment.md), and [Astra follow-up task cards](tasks/followups.md). These are small retrospective development studies, not a general leaderboard or evidence that a model cannot do science. A wrong forecast alone does not prove that the correct answer was inferable from the supplied evidence.
+
+## Figures
+
+- [All-model battery comparison](figures/02-battery-models.png): forecast error and choices, showing both baselines and every completed attempt.
+- [All-model catalyst comparison](figures/03-catalyst-models.png): the same metrics on a separate task and scale.
+- [Astra with longer early-cycle prefixes](figures/04-astra-more-data.png): a separate subscription study.
+- [Astra's cell-selection follow-up](figures/05-astra-selection.png): the effect of the revised method-assisted assignment on reused records.
+- [Square PDF figure collection](figures/Vicena_Scientific_Benchmark_Results.pdf) and [figure notes / editable SVGs](figures/README.md).
 
 ## Explore
 
@@ -59,8 +73,8 @@ The model scope is **Astra, Sol and Luna**. Only Astra has completed this exact 
 - [Benchmark data dictionary](docs/data-dictionary.md): the exact battery/catalyst fields, units, missing values and evaluation schema.
 - [Protocol](docs/protocol.md): cutoffs, hidden outcomes, metrics, baselines and comparison controls.
 - [Run and reproduce](docs/reproduce.md): validate, package and score your own private cases.
-- [Results and limitations](docs/results.md): complete paired-task pilot history and evidence boundaries.
-- [Machine-readable aggregate results](results/pilot-summary.json).
+- [Multi-model results](docs/multi-model-results.md), [scientific assessment](docs/assessment.md), and [earlier Astra results](docs/results.md).
+- Machine-readable aggregates: [multi-model comparison](results/multi-model-summary.json), [Astra follow-ups](results/astra-followups.json), and [historical pilots](results/pilot-summary.json).
 - [Contributing](CONTRIBUTING.md): propose a task or submit a reproducible run without exposing source records.
 
 Maintained by [Vicena](https://vicena.ai). To discuss scientific datasets or a private evaluation, see [Vicena's experimental data programme](https://vicena.ai/experimental-data). Code is MIT licensed; private datasets are not included in that licence.

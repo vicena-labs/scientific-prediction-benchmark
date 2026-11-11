@@ -15,3 +15,5 @@ readings.csv
 *.ipynb
 *.mp4
 *.pdf
+# Reviewed aggregate figure collection; laboratory PDFs stay excluded.
+!figures/Vicena_Scientific_Benchmark_Results.pdf
